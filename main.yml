@@ -1,0 +1,12 @@
+---
+- hosts: centos
+  become: true
+  tasks:
+   - name: tomcat 
+     yum: name=tomcat state=latest
+   - name: tom
+     yum: name=tomcat-webapps state=latest
+   - name: test
+     yum: name=tomcat-admin-webapps state=latest
+   - name: start tomcat
+     service: name=tomcat enabled=yes state=started 
